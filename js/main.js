@@ -1,7 +1,8 @@
-// Custom Cursor
+// Custom Cursor — solo su dispositivi con puntatore fine (mouse desktop)
 const cursor = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
-if (cursor && follower) {
+const isPointerFine = window.matchMedia('(pointer: fine)').matches;
+if (cursor && follower && isPointerFine) {
   let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX; mouseY = e.clientY;
@@ -18,6 +19,10 @@ if (cursor && follower) {
     el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); follower.classList.add('hover'); });
     el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); follower.classList.remove('hover'); });
   });
+} else if (cursor && follower) {
+  // Touch/mobile: nascondi gli elementi cursore
+  cursor.style.display = 'none';
+  follower.style.display = 'none';
 }
 
 // Navbar scroll
