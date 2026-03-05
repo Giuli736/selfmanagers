@@ -394,18 +394,51 @@ footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
   .portfolio-item.span-2 { grid-column: span 2; }
 }
 @media (max-width: 768px) {
+  /* ── Cursore custom: nascosto su touch/mobile ── */
+  body { cursor: auto; }
+  .cursor, .cursor-follower { display: none !important; }
+
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: white; padding: 2rem 5%; border-bottom: 1px solid rgba(94,3,252,0.08); gap: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-  section { padding: 70px 5%; }
+
+  section { padding: 60px 5%; }
+
+  /* ── Hero ── */
+  .hero { padding: 100px 5% 60px; text-align: center; }
+  .hero-content { max-width: 100%; }
+  .hero-badge { margin-left: auto; margin-right: auto; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; justify-content: center; padding-top: 2rem; margin-top: 2.5rem; }
+  .stat-num { font-size: 2rem; }
+
+  /* ── Sezioni ── */
+  .section-sub { max-width: 100%; }
   .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-item.span-2 { grid-column: span 1; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
   .clients-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
   .process-steps { grid-template-columns: 1fr; }
+
+  /* ── About float cards: niente overflow ── */
+  .about-float-card, .about-float-card-2 { right: 0; }
+
+  /* ── Page header ── */
+  .page-header { padding: 120px 5% 60px; text-align: center; }
+  .page-header h1, .page-header p { max-width: 100%; }
+
+  /* ── Footer ── */
   footer { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
-  .postcard { width: 190px; height: 140px; }
+
+  /* ── Postcard ── */
+  .postcard { width: 160px; height: 115px; }
+
+  /* ── Contact form ── */
+  .contact-form { padding: 1.5rem; }
+
+  /* ── Team full card ── */
+  .team-full-card { flex-direction: column; }
 }
