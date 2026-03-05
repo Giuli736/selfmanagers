@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Siamo — Selfmanagers</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .team-full-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
+    .team-full-card { border-radius: 24px; overflow: hidden; border: 1px solid rgba(94,3,252,0.1); transition: box-shadow 0.3s; }
+    .team-full-card:hover { box-shadow: 0 20px 50px rgba(94,3,252,0.12); }
+    .team-card-top { background: var(--gradient); padding: 3rem; position: relative; overflow: hidden; display: flex; align-items: flex-end; min-height: 220px; }
+    .team-card-top::before { content: ''; }
+    /* L'immagine dentro team-card-top deve essere cliccabile */
+    .team-card-top img { pointer-events: auto !important; cursor: zoom-in !important; }
+    /* L'overlay scuro NON deve bloccare i click sull'immagine */
+    .team-card-top > div[style*="gradient"] { pointer-events: none; }
+    .team-card-badge { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 14px; padding: 1rem 1.3rem; position: relative; z-index: 1; }
+    .team-card-badge h3 { font-weight: 900; font-size: 1.2rem; color: white; }
+    .team-card-badge p { font-size: 0.82rem; color: rgba(255,255,255,0.75); margin-top: 0.2rem; }
+    .team-card-bottom { background: white; padding: 2rem; }
+    .team-card-bottom p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.2rem; }
+    .team-card-skills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .skill-tag { background: rgba(94,3,252,0.08); color: var(--purple); font-size: 0.72rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .value-card { padding: 2rem; background: var(--gray); border-radius: 20px; border: 1px solid rgba(94,3,252,0.06); transition: transform 0.3s; }
+    .value-card:hover { transform: translateY(-4px); }
+    .value-icon { width: 48px; height: 48px; background: var(--gradient); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+    .value-icon svg { width: 22px; height: 22px; stroke: white; fill: none; stroke-width: 1.8; }
+    .value-card h3 { font-weight: 800; font-size: 1rem; margin-bottom: 0.6rem; }
+    .value-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; }
+    @media(max-width:768px){ .team-full-grid{grid-template-columns:1fr;} .values-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="images/logo-purple.png" alt="Selfmanagers"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="servizi.html">Servizi</a></li>
+    <li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contatti.html" class="nav-cta">Contattaci</a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="page-header">
+  <div class="section-label">Chi Siamo</div>
+  <h1>Due professionisti,<br>una <span class="gradient-text">visione comune</span></h1>
+  <p>Selfmanagers nasce dalla passione per il digitale e dalla convinzione che ogni azienda meriti una presenza online straordinaria.</p>
+</div>
+<section class="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-main-block" style="padding:0; background:none;">
+        <img src="images/chi_siamo.jpeg" alt="Il team SelfManager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:24px;cursor:zoom-in;">
+        <div class="about-name-card" style="position:relative;z-index:1;margin:1.5rem;pointer-events:none;">
+          <h4>Selfmanagers</h4>
+          <p>Agenzia digitale · Dal 2023</p>
+        </div>
+      </div>
+      <div class="about-float-card">
+        <div class="tag">Social Media</div>
+        <h4 style="margin-top:0.5rem;">Giuliano Cassone</h4>
+        <p>Estratega dei social</p>
+      </div>
+      <div class="about-float-card-2">
+        <div class="tag" style="background:rgba(144,3,252,0.08);color:var(--purple-light);">Web Dev</div>
+        <h4 style="margin-top:0.5rem;">Nicholas Turchiarulo</h4>
+        <p>Sviluppatore web</p>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-label reveal">La nostra storia</div>
+      <h2 class="section-title reveal reveal-delay-1">Nati per fare la<br><span class="gradient-text">differenza online</span></h2>
+      <p class="about-intro reveal reveal-delay-2">Il nome Selfmanagers nasce da una visione chiara: ogni persona, professionista o brand ha dentro di sé il potenziale per diventare il miglior gestore della propria immagine, voce e identità. La nostra agenzia non è solo un fornitore di servizi: è una guida strategica che ti accompagna in un percorso di consapevolezza, crescita e autonomia. Crediamo in un nuovo modo di fare comunicazione più umano, più autentico, più sostenibile, dove il cliente non è un destinatario passivo, ma un protagonista attivo.</p>
+	  <p class="about-intro reveal reveal-delay-3">Dall’altro lato, Selfmanagers è anche una filosofia di vita: essere liberi, senza regole imposte, creativi e anche un po’ folli. Crediamo che la comunicazione più potente sia quella che nasce da chi ha il coraggio di essere sé stesso, di rompere gli schemi, di inventarsi ogni giorno.</p>
+      <div class="team-members reveal">
+        <div class="team-member">
+          <div class="member-avatar" style="padding:0;overflow:hidden;"><img src="images/team/giuliano.jpeg" alt="Giuliano" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:14px;"></div>
+          <div class="member-info"><h4>Giuliano Cassone</h4><p>Social Media Strategist & Content Creator</p></div>
+          <div class="member-tag">Founder</div>
+		  <div class="member-tag">Social Media</div>
+        </div>
+        <div class="team-member">
+          <div class="member-avatar" style="padding:0;overflow:hidden;"><img src="images/team/nicholas.jpeg" alt="Nicholas" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:14px;"></div>
+          <div class="member-info"><h4>Nicholas Turchiarulo</h4><p>Web Developer & Digital Designer</p></div>
+          <div class="member-tag">Web Dev</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;" class="reveal">
+        <a href="contatti.html" class="btn-primary">Lavora con noi</a>
+        <a href="servizi.html" class="btn-secondary">I nostri servizi</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--gray);">
+  <div class="section-label reveal">Il Team</div>
+  <h2 class="section-title reveal reveal-delay-1">Conosci chi <span class="gradient-text">lavora per te</span></h2>
+  <div class="team-full-grid">
+    <div class="team-full-card reveal">
+      <div class="team-card-top" data-initials="GC" style="padding:0; min-height:280px;">
+        <img src="images/team/giuliano.jpeg" alt="Giuliano Cassone" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;cursor:zoom-in;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);pointer-events:none;"></div>
+        <div class="team-card-badge" style="position:relative;z-index:1;margin:1.5rem;pointer-events:none;"><h3>Giuliano Cassone</h3><p>Social Media Strategist</p></div>
+      </div>
+      <div class="team-card-bottom">
+        <p>Giuliano è il motore creativo dietro la strategia social di Selfmanagers. Con una profonda conoscenza degli algoritmi e delle dinamiche dei social media, trasforma idee in contenuti che coinvolgono, crescono le community e portano risultati misurabili.</p>
+        <p>Specializzato in Instagram, Facebook e TikTok, gestisce campagne advertising e piani editoriali per clienti di ogni settore.</p>
+        <div class="team-card-skills"><span class="skill-tag">Social Strategy</span><span class="skill-tag">Content Creation</span><span class="skill-tag">Meta Ads</span><span class="skill-tag">Community Mgmt</span></div>
+      </div>
+    </div>
+    <div class="team-full-card reveal reveal-delay-1">
+      <div class="team-card-top" data-initials="NT" style="padding:0; min-height:280px; background:none;">
+        <img src="images/team/nicholas.jpeg" alt="Nicholas Turchiarulo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;cursor:zoom-in;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(94,3,252,0.75) 0%, transparent 60%);pointer-events:none;"></div>
+        <div class="team-card-badge" style="position:relative;z-index:1;margin:1.5rem;pointer-events:none;"><h3>Nicholas Turchiarulo</h3><p>Web Developer & Designer</p></div>
+      </div>
+      <div class="team-card-bottom">
+        <p>Nicholas è l'architetto digitale del team. Sviluppa siti web moderni, veloci e ottimizzati per la conversione, curando ogni dettaglio dall'esperienza utente alla performance tecnica.</p>
+        <p>Con competenze che spaziano dal design allo sviluppo, garantisce prodotti digitali che non solo sono belli, ma funzionano davvero.</p>
+        <div class="team-card-skills"><span class="skill-tag">Web Design</span><span class="skill-tag">Frontend Dev</span><span class="skill-tag">Backend Dev</span><span class="skill-tag">UX/UI</span><span class="skill-tag">SEO</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:white;">
+  <div class="section-label reveal">I Nostri Valori</div>
+  <h2 class="section-title reveal reveal-delay-1">Cosa ci <span class="gradient-text">guida ogni giorno</span></h2>
+  <div class="values-grid">
+    <div class="value-card reveal"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Strategia prima di tutto</h3><p>Ogni azione è supportata da dati e ragionamento strategico. Non creiamo contenuti a caso: ogni post, pagina, campagna ha uno scopo preciso.</p></div>
+    <div class="value-card reveal reveal-delay-1"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Relazione autentica</h3><p>Trattiamo ogni cliente come un partner. Costruiamo rapporti duraturi basati su trasparenza, comunicazione aperta e obiettivi comuni.</p></div>
+    <div class="value-card reveal reveal-delay-2"><div class="value-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Qualità senza compromessi</h3><p>Ci prendiamo il tempo per fare le cose bene. Dalla prima bozza al prodotto finale, ogni dettaglio è curato con la massima attenzione.</p></div>
+    <div class="value-card reveal"><div class="value-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Risultati misurabili</h3><p>Il nostro successo si misura con il tuo. Monitoriamo le performance, forniamo report dettagliati e ottimizziamo continuamente per massimizzare il ROI.</p></div>
+    <div class="value-card reveal reveal-delay-1"><div class="value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><h3>Passione genuina</h3><p>Amiamo quello che facciamo. Questa passione si traduce in creatività e quella spinta extra che fa la differenza tra un buon lavoro e uno straordinario.</p></div>
+    <div class="value-card reveal reveal-delay-2"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Innovazione continua</h3><p>Il digitale cambia velocemente. Siamo sempre aggiornati su tendenze, strumenti e algoritmi per garantire ai nostri clienti un vantaggio competitivo.</p></div>
+  </div>
+</section>
+<section class="process">
+  <div class="section-label reveal">Come Lavoriamo</div>
+  <h2 class="section-title reveal reveal-delay-1">Il nostro <span class="gradient-text">processo</span></h2>
+  <p class="section-sub reveal reveal-delay-2">Un percorso strutturato per garantire risultati eccellenti ad ogni progetto.</p>
+  <div class="process-steps">
+    <div class="process-step reveal"><div class="step-num">01</div><div class="step-title">Incontro conoscitivo</div><div class="step-desc">Primo contatto per comprendere la realtà, la mission e i valori del brand.</div></div>
+    <div class="process-step reveal reveal-delay-1"><div class="step-num">02</div><div class="step-title">Preventivo personalizzato</div><div class="step-desc">Presentiamo le soluzioni più adatte con costi chiari e trasparenti.</div></div>
+    <div class="process-step reveal reveal-delay-2"><div class="step-num">03</div><div class="step-title">Strategia di comunicazione</div><div class="step-desc">Studio del target, analisi competitor, piano editoriale e tono di voce.</div></div>
+    <div class="process-step reveal reveal-delay-3"><div class="step-num">04</div><div class="step-title">Creazione e lancio</div><div class="step-desc">Realizziamo contenuti, lanciamo il progetto e monitoriamo i risultati.</div></div>
+  </div>
+</section>
+<footer>
+  <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="Selfmanagers"></a>
+  <p class="footer-copy">© 2026 Selfmanagers. Tutti i diritti riservati.</p>
+  <ul class="footer-links">
+    <li><a href="servizi.html">Servizi</a></li>
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+  </ul>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
