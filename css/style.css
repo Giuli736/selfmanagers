@@ -2,9 +2,9 @@
 
 :root {
   --white: #ffffff;
-  --purple: #4A1384;
-  --purple-light: #d535f0;
-  --black: #1a0d30;
+  --purple: #5e03fc;
+  --purple-light: #9003fc;
+  --black: #0a0a0a;
   --gray: #f5f3ff;
   --text-muted: #6b6b8a;
   --gradient: linear-gradient(135deg, var(--purple), var(--purple-light));
@@ -57,7 +57,7 @@ nav.scrolled { box-shadow: 0 4px 32px rgba(94,3,252,0.10); }
   text-decoration: none; height: 40px;
 }
 .nav-logo img {
-  height: 70px; width: auto;
+  height: 36px; width: auto;
   display: block; object-fit: contain;
 }
 /* versione testo fallback */
@@ -359,7 +359,7 @@ footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
   text-decoration: none;
 }
 .footer-logo img {
-  height: 50px; width: auto;
+  height: 30px; width: auto;
   display: block; object-fit: contain;
   filter: brightness(0) invert(1);
 }
@@ -394,51 +394,50 @@ footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
   .portfolio-item.span-2 { grid-column: span 2; }
 }
 @media (max-width: 768px) {
-  /* ── Cursore custom: nascosto su touch/mobile ── */
-  body { cursor: auto; }
-  .cursor, .cursor-follower { display: none !important; }
+  /* Forza la pagina a non uscire dallo schermo */
+  html, body { overflow-x: hidden; max-width: 100vw; }
 
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: white; padding: 2rem 5%; border-bottom: 1px solid rgba(94,3,252,0.08); gap: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-
-  section { padding: 60px 5%; }
-
-  /* ── Hero ── */
-  .hero { padding: 100px 5% 60px; text-align: center; }
-  .hero-content { max-width: 100%; }
-  .hero-badge { margin-left: auto; margin-right: auto; }
-  .hero-sub { margin-left: auto; margin-right: auto; }
-  .hero-actions { justify-content: center; }
-  .hero-stats { gap: 1.5rem; flex-wrap: wrap; justify-content: center; padding-top: 2rem; margin-top: 2.5rem; }
-  .stat-num { font-size: 2rem; }
-
-  /* ── Sezioni ── */
-  .section-sub { max-width: 100%; }
+  section { padding: 70px 5%; }
   .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-item.span-2 { grid-column: span 1; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
   .clients-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
   .process-steps { grid-template-columns: 1fr; }
-
-  /* ── About float cards: niente overflow ── */
-  .about-float-card, .about-float-card-2 { right: 0; }
-
-  /* ── Page header ── */
-  .page-header { padding: 120px 5% 60px; text-align: center; }
-  .page-header h1, .page-header p { max-width: 100%; }
-
-  /* ── Footer ── */
   footer { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
+  .postcard { width: 190px; height: 140px; }
 
-  /* ── Postcard ── */
-  .postcard { width: 160px; height: 115px; }
+  /* ── About: targhette flottanti dentro lo schermo ── */
+  .about-visual { padding: 0 5%; }
+  .about-main-block { aspect-ratio: 4/3; width: 100%; }
+  .about-float-card {
+    top: -14px;
+    right: 0;
+    left: auto;
+    max-width: calc(100% - 2rem);
+    font-size: 0.82rem;
+    padding: 0.9rem 1.1rem;
+  }
+  .about-float-card-2 {
+    bottom: -14px;
+    right: 0;
+    left: auto;
+    max-width: calc(100% - 2rem);
+    font-size: 0.82rem;
+    padding: 0.9rem 1.1rem;
+  }
 
-  /* ── Contact form ── */
-  .contact-form { padding: 1.5rem; }
+  /* ── Chi siamo: cards team full width ── */
+  .team-full-card { width: 100%; margin: 0; }
+  .teams-grid { grid-template-columns: 1fr !important; gap: 1.5rem; }
 
-  /* ── Team full card ── */
-  .team-full-card { flex-direction: column; }
+  /* ── Page header testo centrato ── */
+  .page-header { padding: 120px 5% 60px; text-align: center; }
+  .page-header h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .page-header p { margin: 1rem auto 0; }
 }
