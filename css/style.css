@@ -2,9 +2,9 @@
 
 :root {
   --white: #ffffff;
-  --purple: #5e03fc;
-  --purple-light: #9003fc;
-  --black: #0a0a0a;
+  --purple: #4A1384;
+  --purple-light: #d535f0;
+  --black: #1a0d30;
   --gray: #f5f3ff;
   --text-muted: #6b6b8a;
   --gradient: linear-gradient(135deg, var(--purple), var(--purple-light));
@@ -57,7 +57,7 @@ nav.scrolled { box-shadow: 0 4px 32px rgba(94,3,252,0.10); }
   text-decoration: none; height: 40px;
 }
 .nav-logo img {
-  height: 36px; width: auto;
+  height: 70px; width: auto;
   display: block; object-fit: contain;
 }
 /* versione testo fallback */
@@ -359,7 +359,7 @@ footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
   text-decoration: none;
 }
 .footer-logo img {
-  height: 30px; width: auto;
+  height: 50px; width: auto;
   display: block; object-fit: contain;
   filter: brightness(0) invert(1);
 }
